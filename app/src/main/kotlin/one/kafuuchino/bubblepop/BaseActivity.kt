@@ -21,6 +21,7 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setContentView(onCreateViewId())
         if (onCreateViewToolbarId() != 0) {
             toolbar = findViewById(onCreateViewToolbarId()) as Toolbar
             setSupportActionBar(toolbar)
@@ -35,10 +36,6 @@ abstract class BaseActivity : AppCompatActivity() {
             window.navigationBarColor = Color.BLACK
         }
         setDefault()
-    }
-
-    override fun setContentView(layoutResId: Int) {
-        super.setContentView(layoutResId)
     }
 
     protected abstract fun setDefault()
