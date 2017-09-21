@@ -3,10 +3,17 @@ package us.buddman.bubblepop
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class MyProfileSettingsActivity : AppCompatActivity() {
+class MyProfileSettingsActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_profile_settings)
+
+    override fun setDefault() {
+    }
+
+    override fun onCreateViewId(): Int {
+        return R.layout.activity_my_profile_settings
+    }
+
+    override fun onCreateViewToolbarId(): Int {
+        return 0
     }
 }

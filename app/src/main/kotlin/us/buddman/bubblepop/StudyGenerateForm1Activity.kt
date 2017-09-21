@@ -3,10 +3,17 @@ package us.buddman.bubblepop
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class StudyGenerateForm1Activity : AppCompatActivity() {
+class StudyGenerateForm1Activity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_study_generate_form1)
+
+    override fun setDefault() {
+    }
+
+    override fun onCreateViewId(): Int {
+        return R.layout.activity_study_generate_form1
+    }
+
+    override fun onCreateViewToolbarId(): Int {
+        return 0
     }
 }

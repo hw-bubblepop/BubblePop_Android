@@ -9,7 +9,7 @@ import android.view.ViewGroup
 /**
  * Created by Junseok on 2017-09-21.
  */
-class StoryChatFragment : Fragment(){
+class StoryOpenChatListFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return super.onCreateView(inflater, container, savedInstanceState)

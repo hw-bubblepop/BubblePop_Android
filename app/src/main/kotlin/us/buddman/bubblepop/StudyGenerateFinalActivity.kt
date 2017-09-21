@@ -3,10 +3,16 @@ package us.buddman.bubblepop
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-class StudyGenerateFinalActivity : AppCompatActivity() {
+class StudyGenerateFinalActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_study_generate_final)
+    override fun setDefault() {
+    }
+
+    override fun onCreateViewId(): Int {
+        return R.layout.activity_study_generate_final
+    }
+
+    override fun onCreateViewToolbarId(): Int {
+        return 0
     }
 }
