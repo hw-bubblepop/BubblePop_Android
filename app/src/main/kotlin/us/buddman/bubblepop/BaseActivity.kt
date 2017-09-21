@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop
+package us.buddman.bubblepop;
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding

@@ -15,8 +15,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
-
-import one.kafuuchino.bubblepop.R
+import us.buddman.bubblepop.R
 
 
 /**
@@ -177,12 +176,6 @@ class CartaTagView : AppCompatTextView {
         requestLayout()
     }
 
-    fun setFullMode(fullMode: Boolean) {
-        this.fullMode = fullMode
-        setView()
-        requestLayout()
-    }
-
     fun setTextColorForceFully(color: Int) {
         this.isTextColorEnabled = true
         this.textColor = color
@@ -190,9 +183,14 @@ class CartaTagView : AppCompatTextView {
         requestLayout()
     }
 
-    fun getFullMode(): Boolean {
-        return this.fullMode
-    }
+    var getFullMode: Boolean
+        get() = this.fullMode
+        set(fullMode) {
+            this.fullMode = fullMode
+            setView()
+            requestLayout()
+        }
+
 
     var isGradientEnabled: Boolean
         get() = gradientEnabled

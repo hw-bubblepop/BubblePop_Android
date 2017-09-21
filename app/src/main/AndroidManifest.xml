@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="one.kafuuchino.bubblepop">
+    package="us.buddman.bubblepop">
 
     <application
         android:name=".utils.AppController"
@@ -17,6 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FindFriendsActivity" />
+        <activity android:name=".FriendsInfoActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".BubbleMoaGenerateActivity" />
+        <activity android:name=".MyProfileSettingsActivity" />
+        <activity android:name=".StudyGenerateForm1Activity" />
+        <activity android:name=".StudyGenerateForm2Activity" />
+        <activity android:name=".StudyGenerateFinalActivity" />
+        <activity android:name=".StoryChatActivity"></activity>
     </application>
 
 </manifest>

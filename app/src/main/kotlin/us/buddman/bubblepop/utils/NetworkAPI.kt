@@ -1,6 +1,6 @@
-package one.kafuuchino.bubblepop.utils
+package us.buddman.bubblepop.utils
 
-import one.kafuuchino.bubblepop.models.User
+import us.buddman.bubblepop.models.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

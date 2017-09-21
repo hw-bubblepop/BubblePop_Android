@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.models
+package us.buddman.bubblepop.models
 
 /**
  * Created by Junseok Oh on 2017-08-02.

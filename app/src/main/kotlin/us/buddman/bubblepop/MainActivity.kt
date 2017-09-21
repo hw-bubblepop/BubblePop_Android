@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop
+package us.buddman.bubblepop;
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -6,6 +6,8 @@ class MainActivity : BaseActivity() {
 
     override fun setDefault() {
         text.text = "hello world"
+        disableToggle()
+
     }
 
     override fun onCreateViewId(): Int {

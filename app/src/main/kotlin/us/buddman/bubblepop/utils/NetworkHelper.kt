@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.utils
+package us.buddman.bubblepop.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

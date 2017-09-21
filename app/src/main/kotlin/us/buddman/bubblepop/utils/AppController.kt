@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.utils
+package us.buddman.bubblepop.utils
 
 import android.app.Application
 import android.content.Context
@@ -17,7 +17,6 @@ class AppController : Application() {
 
     companion object {
         var context: Context? = null
-            private set
     }
 
 }

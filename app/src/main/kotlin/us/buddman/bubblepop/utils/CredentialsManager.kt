@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.utils
+package us.buddman.bubblepop.utils
 
 /**
  * Created by Junseok Oh on 2017-07-18.
@@ -11,16 +11,16 @@ import android.support.v4.util.Pair
 
 import com.google.gson.Gson
 
-import one.kafuuchino.bubblepop.models.User
+import us.buddman.bubblepop.models.User
 
 
-class CredentialsManager private constructor() {
+class CredentialsManager {
     private val preferences: SharedPreferences
     private val editor: SharedPreferences.Editor
     private val context: Context = AppController.context!!
 
     init {
-        preferences = context.getSharedPreferences("Cardline", Context.MODE_PRIVATE)
+        preferences = context.getSharedPreferences("BubblePop", Context.MODE_PRIVATE)
         editor = preferences.edit()
     }
 
