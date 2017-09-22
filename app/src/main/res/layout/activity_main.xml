@@ -5,13 +5,19 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="one.kafuuchino.bubblepop.MainActivity">
+        android:orientation="vertical"
+        tools:context="us.buddman.bubblepop.MainActivity">
 
-        <TextView
-            android:id="@+id/text"
+        <us.buddman.bubblepop.views.ControllableViewPager
+            android:id="@+id/mainPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello World!" />
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/mainBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
     </LinearLayout>
 </layout>

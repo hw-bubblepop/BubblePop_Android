@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.views
+package us.buddman.bubblepop.views
 
 /**
  * Created by Junseok Oh on 2017-07-16.
@@ -11,14 +11,14 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 
 class ControllableViewPager : ViewPager {
-    private var swipeEnabled: Boolean = false
+    private var pagerEnabled: Boolean = false
 
     constructor(context: Context) : super(context) {}
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
 
     override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
-        if (swipeEnabled) {
+        if (pagerEnabled) {
             return super.onInterceptTouchEvent(ev)
         } else {
             if (MotionEventCompat.getActionMasked(ev) == MotionEvent.ACTION_MOVE) {
@@ -33,14 +33,14 @@ class ControllableViewPager : ViewPager {
     }
 
     override fun onTouchEvent(ev: MotionEvent): Boolean {
-        if (swipeEnabled) {
+        if (pagerEnabled) {
             return super.onTouchEvent(ev)
         } else {
             return MotionEventCompat.getActionMasked(ev) != MotionEvent.ACTION_MOVE && super.onTouchEvent(ev)
         }
     }
 
-    fun setPagingswipeEnabled(swipeEnabled: Boolean) {
-        this.swipeEnabled = swipeEnabled
+    fun setPagingEnabled(enabled: Boolean) {
+        this.pagerEnabled = enabled
     }
 }
