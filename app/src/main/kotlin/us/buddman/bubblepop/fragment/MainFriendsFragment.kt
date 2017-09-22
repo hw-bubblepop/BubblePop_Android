@@ -1,6 +1,6 @@
 package us.buddman.bubblepop.fragment
 
-import android.app.Fragment
+import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +13,7 @@ import us.buddman.bubblepop.R
 class MainFriendsFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater!!.inflate(R.layout.fragment_main_friends, container)
+        return inflater!!.inflate(R.layout.fragment_main_friends, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
