@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import us.buddman.bubblepop.R
 
 /**
  * Created by Junseok on 2017-09-21.
@@ -12,6 +13,11 @@ import android.view.ViewGroup
 class MainFriendsFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater!!.inflate(R.layout.fragment_main_friends, container)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 }
