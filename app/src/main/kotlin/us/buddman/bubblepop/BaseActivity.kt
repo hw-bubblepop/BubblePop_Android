@@ -32,7 +32,7 @@ abstract class BaseActivity : AppCompatActivity() {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = Color.parseColor("#BDBDBD")
+            window.statusBarColor = Color.parseColor("#5780e5")
             window.navigationBarColor = Color.BLACK
         }
         setDefault()

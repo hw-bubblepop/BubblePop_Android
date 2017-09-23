@@ -1,13 +1,265 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="us.buddman.bubblepop.fragment.MainBubbleCardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp">
 
-</FrameLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#FFF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:hint="STAC 발표에 참여 해보는건 어떤가요?"
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:singleLine="true"
+                android:textColor="@color/textColorGray"
+                android:textColorHint="@color/textColorGray"
+                android:textSize="14sp" />
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/bubbleMoaSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/btn_actionbar_settings" />
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="버블팝 둘러보기"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="72dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="#aa3c3c3c" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:padding="8dp"
+                                android:text="스터디"
+                                android:textColor="#FFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="72dp"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="#aa3c3c3c" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:padding="8dp"
+                                android:text="모임"
+                                android:textColor="#FFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="72dp"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="8dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="5dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/open_study_background">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:padding="8dp"
+                                android:text="개설"
+                                android:textColor="#FFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_add" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/activity_background"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="스터디"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bubbleMoaStudyViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/ic_bubblemoa_more"
+                        android:padding="16dp"
+                        android:text="전체보기"
+                        android:textColor="@color/textColorGray"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/bubbleMoaMoimRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="모임"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bubbleMoaMoimViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/ic_bubblemoa_more"
+                        android:padding="16dp"
+                        android:text="전체보기"
+                        android:textColor="@color/textColorGray"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/bubbleMoaStudyRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
