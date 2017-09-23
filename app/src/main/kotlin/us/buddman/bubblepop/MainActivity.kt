@@ -8,8 +8,19 @@ import us.buddman.bubblepop.fragment.*
 
 class MainActivity : BaseActivity() {
 
+    lateinit var pagerAdapter: MainPagerAdapter
     override fun setDefault() {
-        mainPager.adapter = MainPager(supportFragmentManager)
+        pagerAdapter = MainPagerAdapter(supportFragmentManager)
+        mainPager.adapter = pagerAdapter
+        mainBottomBar.setOnTabSelectListener { tabId: Int ->
+            when (tabId) {
+                R.id.main_bubblemoa -> mainPager.currentItem = 0
+                R.id.main_friends -> mainPager.currentItem = 1
+                R.id.main_bubblecard -> mainPager.currentItem = 2
+                R.id.main_story -> mainPager.currentItem = 3
+                R.id.main_store -> mainPager.currentItem = 4
+            }
+        }
     }
 
     override fun onCreateViewId(): Int {
@@ -20,9 +31,9 @@ class MainActivity : BaseActivity() {
         return 0
     }
 
-    class MainPager(fm: FragmentManager): FragmentStatePagerAdapter(fm){
+    class MainPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment? {
-            return when (position){
+            return when (position) {
                 0 -> MainBubbleMoaFragment()
                 1 -> MainFriendsFragment()
                 2 -> MainBubbleCardFragment()
@@ -32,7 +43,7 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        override fun getCount(): Int{
+        override fun getCount(): Int {
             return 5
         }
 
