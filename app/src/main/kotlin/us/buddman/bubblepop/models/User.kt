@@ -13,8 +13,7 @@ class User {
     var profile_img: String? = null
     var facebook_id: String? = null
 
-    constructor() {}
-
+    
     constructor(email: String, name: String, token: String, profile: String, profile_img: String, facebook_id: String) {
         this.email = email
         this.name = name
@@ -22,5 +21,11 @@ class User {
         this.profile = profile
         this.profile_img = profile_img
         this.facebook_id = facebook_id
+    }
+
+    constructor(email: String, name: String, profile_img: String) {
+        this.email = email
+        this.name = name
+        this.profile_img = profile_img
     }
 }
