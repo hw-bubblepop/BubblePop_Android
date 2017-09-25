@@ -17,7 +17,7 @@ import us.buddman.bubblepop.R
  */
 class MainStoryFragment : Fragment() {
 
-    var adapter: FragmentPagerAdapter? = null
+    var adapter: FragmentStatePagerAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater!!.inflate(R.layout.fragment_main_story, container, false)
@@ -31,7 +31,7 @@ class MainStoryFragment : Fragment() {
     }
 }
 
-class ChatPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ChatPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return if (position == 0) StoryChatListFragment() else StoryOpenChatListFragment()

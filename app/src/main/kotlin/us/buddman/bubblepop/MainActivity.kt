@@ -12,6 +12,7 @@ class MainActivity : BaseActivity() {
     override fun setDefault() {
         pagerAdapter = MainPagerAdapter(supportFragmentManager)
         mainPager.adapter = pagerAdapter
+        mainPager.offscreenPageLimit = 5
         mainBottomBar.setOnTabSelectListener { tabId: Int ->
             when (tabId) {
                 R.id.main_bubblemoa -> mainPager.currentItem = 0
