@@ -6,4 +6,5 @@
     <color name="textColorGray">#bdbdbd</color>
     <color name="dividerColor">#eeeeee</color>
     <color name="textColorNormal">#81ffffff</color>
+    <color name="textColorBlackNormal">#424242</color>
 </resources>
