@@ -1,4 +1,4 @@
-package one.kafuuchino.bubblepop.views
+package us.buddman.bubblepop.views
 
 
 import android.content.Context

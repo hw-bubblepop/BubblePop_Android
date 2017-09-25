@@ -1,13 +1,143 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="us.buddman.bubblepop.fragment.MainBubbleCardFragment">
+    android:orientation="vertical"
+    tools:context="us.buddman.bubblepop.fragment.MainStoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#FFF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:hint="아이템 검색"
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:singleLine="true"
+                android:textColor="@color/textColorGray"
+                android:textColorHint="@color/textColorGray"
+                android:textSize="14sp" />
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/bubbleMoaSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/btn_actionbar_settings" />
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/activity_background">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/mainStoreTabScrollContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <us.buddman.bubblepop.views.CartaTagView
+                        android:id="@+id/homeTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="홈"
+                        android:textSize="14sp"
+                        app:fullMode="true"
+                        app:themeColor="@color/colorPrimary" />
+
+                    <us.buddman.bubblepop.views.CartaTagView
+                        android:id="@+id/bubbleCardTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="버블 카드"
+                        android:textSize="14sp"
+                        app:fullMode="true"
+                        app:themeColor="@color/colorPrimary" />
+
+                    <us.buddman.bubblepop.views.CartaTagView
+                        android:id="@+id/fontTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="폰트"
+                        android:textSize="14sp"
+                        app:fullMode="true"
+                        app:themeColor="@color/colorPrimary" />
+
+                    <us.buddman.bubblepop.views.CartaTagView
+                        android:id="@+id/emoticonTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="이모티콘"
+                        android:textSize="14sp"
+                        app:fullMode="true"
+                        app:themeColor="@color/colorPrimary" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:id="@+id/mainStoreAds"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="와 정말 대단해...."
+                    android:textColor="#FFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold|italic" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mainStoreRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

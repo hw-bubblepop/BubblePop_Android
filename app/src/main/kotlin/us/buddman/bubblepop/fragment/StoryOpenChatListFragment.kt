@@ -22,13 +22,11 @@ class StoryOpenChatListFragment : Fragment() {
     var openChatArray: ArrayList<Chat> = ArrayList()
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater!!.inflate(R.layout.fragment_story_openchatlist, container, false)
-        Log.e("asdf StoryOpenChatListFragment", "onCreateView")
 
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.e("asdf StoryOpenChatListFragment", "onViewCreated")
         initialize()
         storyOpenChatRecyclerView.layoutManager = LinearLayoutManager(context)
         openChatAdapter = LastAdapter(openChatArray, BR.content)
