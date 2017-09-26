@@ -33,7 +33,8 @@
         <activity android:name=".StoryChatActivity" />
         <activity android:name=".CardEditActivity" />
         <activity android:name=".StoreItemViewActivity" />
-        <activity android:name=".StudyInfoViewActivity"></activity>
+        <activity android:name=".StudyInfoViewActivity" />
+        <activity android:name=".StudyMoimManageActivity"></activity>
     </application>
 
 </manifest>
