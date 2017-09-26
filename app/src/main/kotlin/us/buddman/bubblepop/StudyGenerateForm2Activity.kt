@@ -6,6 +6,7 @@ import android.os.Bundle
 class StudyGenerateForm2Activity : BaseActivity() {
 
     override fun setDefault() {
+        // RecyclerView on Top
     }
 
     override fun onCreateViewId(): Int {
