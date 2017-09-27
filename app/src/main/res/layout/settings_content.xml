@@ -4,7 +4,7 @@
 
         <variable
             name="content"
-            type="android.util.Pair" />
+            type="us.buddman.bubblepop.SettingsContent" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{content.first}"
+            android:text="@{content.title}"
             android:textColor="@color/textColorBlackNormal"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{content.second}"
+            android:text="@{content.content}"
             android:textColor="@color/textColorGray"
             android:textSize="14sp" />
     </LinearLayout>

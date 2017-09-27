@@ -2,21 +2,22 @@
     <tab
         icon="@drawable/btn_btmbar_bubblemoa"
         id="@+id/main_bubblemoa"
-        title="찾기" />
+        title="버블모아" />
     <tab
         icon="@drawable/btn_btmbar_friends"
         id="@+id/main_friends"
-        title="내 카드" />
+        title="친구 목록" />
     <tab
         icon="@drawable/btn_btmbar_bubblecard_on"
         id="@+id/main_bubblecard"
-        title="사용 내역" />
-    <tab
-        icon="@drawable/btn_btmbar_stroy"
-        id="@+id/main_story"
-        title="설정" />
+        title="버블팝" />
     <tab
         icon="@drawable/btn_btmbar_bubblestore"
         id="@+id/main_store"
-        title="설정" />
+        title="스토어" />
+    <tab
+        icon="@drawable/btn_btmbar_more"
+        id="@+id/main_more"
+        title="더보기" />
+
 </tabs>

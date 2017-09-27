@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_main_story.*
 import us.buddman.bubblepop.fragment.*
 
 class MainActivity : BaseActivity() {
@@ -12,16 +13,18 @@ class MainActivity : BaseActivity() {
     override fun setDefault() {
         pagerAdapter = MainPagerAdapter(supportFragmentManager)
         mainPager.adapter = pagerAdapter
-        mainPager.offscreenPageLimit = 5
+        mainPager.offscreenPageLimit = 4
         mainBottomBar.setOnTabSelectListener { tabId: Int ->
             when (tabId) {
                 R.id.main_bubblemoa -> mainPager.currentItem = 0
                 R.id.main_friends -> mainPager.currentItem = 1
                 R.id.main_bubblecard -> mainPager.currentItem = 2
-                R.id.main_story -> mainPager.currentItem = 3
-                R.id.main_store -> mainPager.currentItem = 4
+                R.id.main_store -> mainPager.currentItem = 3
+                R.id.main_more -> mainPager.currentItem = 4
             }
         }
+        mainPager.currentItem = 2
+        mainBottomBar.setDefaultTab(R.id.main_bubblecard)
     }
 
     override fun onCreateViewId(): Int {
@@ -34,12 +37,13 @@ class MainActivity : BaseActivity() {
 
     class MainPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int): Fragment? {
+
             return when (position) {
                 0 -> MainBubbleMoaFragment()
                 1 -> MainFriendsFragment()
                 2 -> MainBubbleCardFragment()
-                3 -> MainStoryFragment()
-                4 -> MainStoreFragment()
+                3 -> MainStoreFragment()
+                4 -> MainMyInfoFragment()
                 else -> null
             }
         }
