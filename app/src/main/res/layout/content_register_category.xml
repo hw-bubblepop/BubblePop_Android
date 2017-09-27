@@ -1,0 +1,27 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="content"
+            type="us.buddman.bubblepop.LikeType" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/registerContentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_transparent_blue_square"
+            android:gravity="center"
+            android:text="섹스"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</layout>
