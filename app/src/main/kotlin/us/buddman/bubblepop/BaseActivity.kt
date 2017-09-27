@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
@@ -25,10 +26,10 @@ abstract class BaseActivity : AppCompatActivity() {
         if (onCreateViewToolbarId() != 0) {
             toolbar = findViewById(onCreateViewToolbarId()) as Toolbar
             setSupportActionBar(toolbar)
-            toolbar.setTitleTextColor(Color.BLACK)
+            toolbar.setTitleTextColor(Color.WHITE)
             toolbar.contentInsetStartWithNavigation = 0
             toolbar.setTitleTextAppearance(applicationContext, R.style.ActionBar_NameText)
-            supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+            supportActionBar!!.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(applicationContext, R.color.colorPrimary)))
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
