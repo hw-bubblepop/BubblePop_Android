@@ -1,5 +1,6 @@
 package us.buddman.bubblepop.fragment
 
+import android.content.Intent
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import com.github.nitrico.fontbinder.BR
 import com.github.nitrico.lastadapter.LastAdapter
 import kotlinx.android.synthetic.main.fragment_story_chatlist.*
 import us.buddman.bubblepop.R
+import us.buddman.bubblepop.StoryChatActivity
 import us.buddman.bubblepop.databinding.ChatContentBinding
 
 /**
@@ -30,6 +32,7 @@ class StoryChatListFragment : Fragment() {
         chatAdapter = LastAdapter(chatArray, BR.content)
                 .map<Chat, ChatContentBinding>(R.layout.chat_content) {
                     onBind { }
+                    onClick { startActivity(Intent(context, StoryChatActivity::class.java)) }
                 }
                 .into(storyChatRecyclerView)
     }

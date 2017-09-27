@@ -15,7 +15,11 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".FindFriendsActivity" />
         <activity android:name=".FriendsInfoActivity" />
@@ -31,11 +35,7 @@
         <activity android:name=".StudyInfoViewActivity" />
         <activity android:name=".StudyMoimManageActivity" />
         <activity android:name=".AuthActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterInfoActivity" />

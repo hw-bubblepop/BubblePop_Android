@@ -35,7 +35,6 @@ class CredentialsManager {
     }
 
     fun saveUserInfo(user: User, loginType: Int) {
-        editor.putInt(LOGIN_TYPE, loginType)
         editor.putString(USER_SCHEMA, Gson().toJson(user))
         editor.putBoolean(HAS_ACTIVE_USER, true)
         editor.apply()
@@ -44,20 +43,10 @@ class CredentialsManager {
     val activeUser: Pair<Boolean, User>
         get() {
             if (preferences.getBoolean(HAS_ACTIVE_USER, false)) {
-                val userType = preferences.getInt(LOGIN_TYPE, -1)
                 val user = Gson().fromJson(preferences.getString(USER_SCHEMA, ""), User::class.java)
-                user.userType = userType
                 return Pair.create(true, user)
             } else
                 return Pair.create<Boolean, User>(false, null)
-        }
-
-    val facebookUserCredential: String
-        get() {
-            if (preferences.getBoolean(HAS_ACTIVE_USER, false) && preferences.getInt(LOGIN_TYPE, -1) == 0) {
-                return preferences.getString(FACEBOOK_TOKEN, "")
-            } else
-                return ""
         }
 
     fun removeAllData() {
@@ -99,7 +88,6 @@ class CredentialsManager {
         /* Data Keys */
         private val USER_SCHEMA = "user_schema"
         private val HAS_ACTIVE_USER = "hasactive"
-        private val LOGIN_TYPE = "login_type"
         private val FACEBOOK_TOKEN = "facebook_token"
         internal var manager: CredentialsManager? = null
 

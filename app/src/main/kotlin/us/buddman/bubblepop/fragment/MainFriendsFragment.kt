@@ -35,7 +35,7 @@ class MainFriendsFragment : Fragment() {
     fun initialize() {
         friendsList.add(Self())
         for (i in 1..10) friendsList.add(
-                User("kotohana5706@edcan.kr", "오준석", "http")
+                User("kotohana5706@edcan.kr", "오준석")
         )
         friendsRecyclerView.layoutManager = LinearLayoutManager(context)
         friendsAdapter = LastAdapter(friendsList, BR.content)

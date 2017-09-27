@@ -5,27 +5,29 @@ package us.buddman.bubblepop.models
  */
 
 class User {
-    var userType = 0
-    var email: String? = null
-    var name: String? = null
-    var token: String? = null
-    var profile: String? = null
-    var profile_img: String? = null
-    var facebook_id: String? = null
+    var _id: String = ""
+    var thumbnail: String = ""
+    var email: String = ""
+    var password: String = ""
+    var nickname: String = ""
+    var age: Int = 0
+    var location: Int = 0
+    var accountType: String = ""
+    var heavencard: HeavenCard? = null
 
-    
-    constructor(email: String, name: String, token: String, profile: String, profile_img: String, facebook_id: String) {
+    constructor(email: String, nickname: String){
         this.email = email
-        this.name = name
-        this.token = token
-        this.profile = profile
-        this.profile_img = profile_img
-        this.facebook_id = facebook_id
+        this.nickname = nickname
+    }
+    constructor(_id: String, thumbnail: String, email: String, password: String, nickname: String, age: Int, location: Int, accountType: String) {
+        this._id = _id
+        this.thumbnail = thumbnail
+        this.email = email
+        this.password = password
+        this.nickname = nickname
+        this.age = age
+        this.location = location
+        this.accountType = accountType
     }
 
-    constructor(email: String, name: String, profile_img: String) {
-        this.email = email
-        this.name = name
-        this.profile_img = profile_img
-    }
 }
