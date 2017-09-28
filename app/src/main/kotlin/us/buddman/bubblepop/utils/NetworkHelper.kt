@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkHelper {
     private val url = "http://soylatte.kr"
-    private val port = 8989
+    private val port = 2233
 
     private var retrofit: Retrofit? = null
 

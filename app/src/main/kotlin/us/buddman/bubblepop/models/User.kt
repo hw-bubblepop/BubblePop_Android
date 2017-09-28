@@ -1,10 +1,12 @@
 package us.buddman.bubblepop.models
 
+import java.io.Serializable
+
 /**
  * Created by Junseok Oh on 2017-08-02.
  */
 
-class User {
+class User() : Serializable {
     var _id: String = ""
     var thumbnail: String = ""
     var email: String = ""
@@ -13,13 +15,14 @@ class User {
     var age: Int = 0
     var location: Int = 0
     var accountType: String = ""
-    var heavencard: HeavenCard? = null
+    var heavencard: String = ""
 
-    constructor(email: String, nickname: String){
+    constructor(email: String, nickname: String) : this() {
         this.email = email
         this.nickname = nickname
     }
-    constructor(_id: String, thumbnail: String, email: String, password: String, nickname: String, age: Int, location: Int, accountType: String) {
+
+    constructor(_id: String, thumbnail: String, email: String, password: String, nickname: String, age: Int, location: Int, accountType: String) : this() {
         this._id = _id
         this.thumbnail = thumbnail
         this.email = email

@@ -18,6 +18,12 @@ interface NetworkAPI {
             @Field("password") password: String
     ): Call<User>
 
+    @POST("/auth/auto")
+    @FormUrlEncoded
+    fun loginByAuto(
+            @Field("id") _id: String
+    ): Call<User>
+
     @POST("/auth/register")
     @FormUrlEncoded
     fun registerByLocal(

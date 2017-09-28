@@ -24,6 +24,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/whoareu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="김진원님은\n어떤 사람인가요?"
@@ -93,7 +94,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="-4dp"
             android:hint="직책을 선택해주세요.."
-            android:inputType="number"
             android:textColor="@color/textColorBlackNormal"
             android:textColorHint="@color/textColorGray"
             android:textSize="12sp"
@@ -113,7 +113,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="-4dp"
             android:hint="전공을 입력해주세요.."
-            android:inputType="number"
             android:textColor="@color/textColorBlackNormal"
             android:textColorHint="@color/textColorGray"
             android:textSize="12sp"
@@ -125,6 +124,7 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_blue_square"

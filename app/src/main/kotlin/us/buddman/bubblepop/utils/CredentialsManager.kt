@@ -34,7 +34,7 @@ class CredentialsManager {
         editor.apply()
     }
 
-    fun saveUserInfo(user: User, loginType: Int) {
+    fun saveUserInfo(user: User) {
         editor.putString(USER_SCHEMA, Gson().toJson(user))
         editor.putBoolean(HAS_ACTIVE_USER, true)
         editor.apply()
