@@ -111,6 +111,26 @@
             android:textSize="12sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="전화번호"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/phoneInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:hint="전화번호를 입력해주세요..."
+            android:inputType="number"
+            android:textColor="@color/textColorBlackNormal"
+            android:textColorHint="@color/textColorGray"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"

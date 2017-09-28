@@ -32,7 +32,8 @@ interface NetworkAPI {
             @Field("nickname") nickname: String,
             @Field("age") age: Int,
             @Field("location") location: Int,
-            @Field("star") star: ArrayList<Int>): Call<User>
+            @Field("star") star: ArrayList<Int>,
+            @Field("phone") phoneNum: String): Call<User>
 
     @POST("/user/update/nickname")
     @FormUrlEncoded

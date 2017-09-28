@@ -86,13 +86,13 @@ class RegisterCategoryActivity : BaseActivity() {
                         user!!.nickname,
                         user!!.age,
                         user!!.location,
-                        likeList
+                        likeList,
+                        user!!.phone
                 ).enqueue(object : Callback<User>{
                     override fun onResponse(call: Call<User>?, response: Response<User>?) {
                         when(response!!.code()){
                             200 -> run {
                                 Toast.makeText(applicationContext, "회원가입에 성공했습니다!", Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(applicationContext, AuthActivity::class.java))
                                 finish()
                             }
                             else -> run {

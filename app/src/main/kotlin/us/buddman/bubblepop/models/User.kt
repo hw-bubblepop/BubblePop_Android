@@ -16,13 +16,14 @@ class User() : Serializable {
     var location: Int = 0
     var accountType: String = ""
     var heavencard: String = ""
+    var phone : String = ""
 
     constructor(email: String, nickname: String) : this() {
         this.email = email
         this.nickname = nickname
     }
 
-    constructor(_id: String, thumbnail: String, email: String, password: String, nickname: String, age: Int, location: Int, accountType: String) : this() {
+    constructor(_id: String, thumbnail: String, email: String, password: String, nickname: String, age: Int, location: Int, accountType: String, phone : String) : this() {
         this._id = _id
         this.thumbnail = thumbnail
         this.email = email
@@ -31,6 +32,7 @@ class User() : Serializable {
         this.age = age
         this.location = location
         this.accountType = accountType
+        this.phone = phone
     }
 
 }
