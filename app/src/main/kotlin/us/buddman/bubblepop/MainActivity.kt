@@ -3,6 +3,7 @@ package us.buddman.bubblepop;
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
+import android.support.v4.view.ViewPager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main_story.*
 import us.buddman.bubblepop.fragment.*
@@ -25,6 +26,10 @@ class MainActivity : BaseActivity() {
         }
         mainPager.currentItem = 2
         mainBottomBar.setDefaultTab(R.id.main_bubblecard)
+
+    }
+    open fun updateFriendList(){
+        (pagerAdapter.instantiateItem(mainPager, 1) as MainFriendsFragment).onPageResume()
     }
 
     override fun onCreateViewId(): Int {

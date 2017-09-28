@@ -79,6 +79,22 @@ class MainFriendsFragment : Fragment() {
         })
         ViewCompat.setNestedScrollingEnabled(friendsRecyclerView, false)
     }
+
+    fun onPageResume(){
+        friendsList.clear()
+        friendsList.add(Self(CredentialsManager.instance.activeUser.second))
+        NetworkHelper.networkInstance.findMyFriend(CredentialsManager.instance.activeUser.second._id).enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
+                friendsList.addAll(response.body()!!)
+                friendsAdapter!!.notifyDataSetChanged()
+
+            }
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
+                println(t!!.message)
+            }
+        })
+    }
+
 }
 
 data class Self(var user: User)

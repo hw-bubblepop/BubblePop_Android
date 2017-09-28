@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_main_bubblecard.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import us.buddman.bubblepop.MainActivity
 import us.buddman.bubblepop.R
 import us.buddman.bubblepop.models.User
 import us.buddman.bubblepop.utils.CredentialsManager
@@ -45,6 +46,7 @@ class MainBubbleCardFragment : Fragment() {
                                                             when (response!!.code()) {
                                                                 200 -> run {
                                                                     Toast.makeText(context, friendresponse.body()!!.nickname + " 님이 친구로 추가되었습니다", Toast.LENGTH_SHORT).show()
+                                                                    (activity as MainActivity).updateFriendList()
                                                                 }
                                                                 409 -> {
                                                                     Toast.makeText(context, friendresponse.body()!!.nickname + " 님은 이미 친구입니다.", Toast.LENGTH_SHORT).show()
@@ -89,6 +91,7 @@ class MainBubbleCardFragment : Fragment() {
                                                             when (response!!.code()) {
                                                                 200 -> run {
                                                                     Toast.makeText(context, friendresponse.body()!!.nickname + " 님이 친구로 추가되었습니다", Toast.LENGTH_SHORT).show()
+                                                                    (activity as MainActivity).updateFriendList()
                                                                 }
                                                                 409 -> {
                                                                     Toast.makeText(context, friendresponse.body()!!.nickname + " 님은 이미 친구입니다.", Toast.LENGTH_SHORT).show()
