@@ -1,6 +1,7 @@
 package us.buddman.bubblepop.fragment
 
 import android.content.Intent
+import android.net.Uri
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
@@ -21,6 +22,7 @@ import us.buddman.bubblepop.databinding.FriendsContentHeaderBinding
 import us.buddman.bubblepop.models.User
 import us.buddman.bubblepop.utils.CredentialsManager
 import us.buddman.bubblepop.utils.NetworkHelper
+import us.buddman.bubblepop.utils.TextUtils
 
 /**
  * Created by Junseok on 2017-09-21.
@@ -47,7 +49,10 @@ class MainFriendsFragment : Fragment() {
                 friendsList.addAll(response.body()!!)
                 friendsAdapter = LastAdapter(friendsList, BR.content)
                         .map<Self, FriendsContentHeaderBinding>(R.layout.friends_content_header) {
-                            onBind { }
+                            onBind {
+                                it.binding.friendsContentHeaderImage.setImageURI(
+                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as Self).user.cards[0])), context)
+                            }
                             onClick {
                                 startActivity(Intent(context, FriendsInfoActivity::class.java)
                                         .putExtra("userData", (friendsList[it.adapterPosition] as Self).user))
@@ -55,6 +60,8 @@ class MainFriendsFragment : Fragment() {
                         }
                         .map<User, FriendsContentBinding>(R.layout.friends_content) {
                             onBind {
+                                it.binding.friendsContentHeaderImage.setImageURI(
+                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as User).cards[0])), context)
                             }
                             onClick {
                                 startActivity(Intent(context, FriendsInfoActivity::class.java)

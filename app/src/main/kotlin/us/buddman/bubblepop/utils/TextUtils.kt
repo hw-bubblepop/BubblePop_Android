@@ -10,5 +10,8 @@ class TextUtils(){
         fun isFilled(vararg editTexts : EditText) : Boolean{
             return editTexts.none { it.text.toString().trim() == "" }
         }
+        fun getServerString(link : String) : String{
+            return "http://soylatte.kr:2233" + link
+        }
     }
 }
