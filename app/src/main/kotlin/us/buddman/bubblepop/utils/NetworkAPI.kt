@@ -38,14 +38,39 @@ interface NetworkAPI {
     @POST("/user/update/nickname")
     @FormUrlEncoded
     fun updateNickname(
-            @Field("_id") _id: String,
+            @Field("id") _id: String,
             @Field("nickname") nickname: String): Call<ResponseBody>
 
     @POST("/user/update/password")
     @FormUrlEncoded
     fun updatePassword(
-            @Field("_id") _id: String,
+            @Field("id") _id: String,
             @Field("password") password: String): Call<ResponseBody>
+
+    @POST("/user")
+    @FormUrlEncoded
+    fun findUserById(
+            @Field("id") _id: String): Call<User>
+
+    @POST("/user")
+    @FormUrlEncoded
+    fun findUserByEmail(
+            @Field("email") email: String): Call<User>
+
+    @POST("/user")
+    @FormUrlEncoded
+    fun findUserByPhone(
+            @Field("phone") phone: String): Call<User>
+
+    @POST("/social/add")
+    @FormUrlEncoded
+    fun addFriend(
+            @Field("id") _id: String, @Field("target_id") targetId: String): Call<User>
+
+    @POST("/social/list")
+    @FormUrlEncoded
+    fun findMyFriend(
+            @Field("id") _id: String): Call<ArrayList<User>>
 
 
 }
