@@ -87,7 +87,9 @@ class RegisterCategoryActivity : BaseActivity() {
                         user!!.age,
                         user!!.location,
                         likeList,
-                        user!!.phone
+                        user!!.phone,
+                        user!!.jobPosition,
+                        user!!.organization
                 ).enqueue(object : Callback<User>{
                     override fun onResponse(call: Call<User>?, response: Response<User>?) {
                         when(response!!.code()){

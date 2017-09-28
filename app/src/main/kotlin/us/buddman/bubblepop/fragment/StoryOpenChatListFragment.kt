@@ -34,12 +34,12 @@ class StoryOpenChatListFragment : Fragment() {
                     onBind { }
                 }
                 .into(storyOpenChatRecyclerView)
+        addChat.setOnClickListener {
+
+        }
     }
 
     fun initialize() {
-        openChatArray.run {
-            for (i in 1..10)
-                add(Chat("건축학 공부 그룹", "레드스톤 있으신분?", 5))
-        }
+
     }
 }

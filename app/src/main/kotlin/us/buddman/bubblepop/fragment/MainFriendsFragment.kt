@@ -1,5 +1,6 @@
 package us.buddman.bubblepop.fragment
 
+import android.content.Intent
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.v4.view.ViewCompat
@@ -9,11 +10,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.nitrico.lastadapter.LastAdapter
 import kotlinx.android.synthetic.main.fragment_main_friends.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import us.buddman.bubblepop.BR
+import us.buddman.bubblepop.FriendsInfoActivity
 import us.buddman.bubblepop.R
 import us.buddman.bubblepop.databinding.FriendsContentBinding
 import us.buddman.bubblepop.databinding.FriendsContentHeaderBinding
 import us.buddman.bubblepop.models.User
+import us.buddman.bubblepop.utils.CredentialsManager
+import us.buddman.bubblepop.utils.NetworkHelper
 
 /**
  * Created by Junseok on 2017-09-21.
@@ -33,26 +40,38 @@ class MainFriendsFragment : Fragment() {
     }
 
     fun initialize() {
-        friendsList.add(Self())
-        for (i in 1..10) friendsList.add(
-                User("kotohana5706@edcan.kr", "오준석")
-        )
         friendsRecyclerView.layoutManager = LinearLayoutManager(context)
-        friendsAdapter = LastAdapter(friendsList, BR.content)
-                .map<Self, FriendsContentHeaderBinding>(R.layout.friends_content_header) {
-                    onBind { }
-                }
-                .map<User, FriendsContentBinding>(R.layout.friends_content) {
-                    onBind { }
-                }
-                .into(friendsRecyclerView)
+        friendsList.add(Self(CredentialsManager.instance.activeUser.second))
+        NetworkHelper.networkInstance.findMyFriend(CredentialsManager.instance.activeUser.second._id).enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
+                friendsList.addAll(response.body()!!)
+                friendsAdapter = LastAdapter(friendsList, BR.content)
+                        .map<Self, FriendsContentHeaderBinding>(R.layout.friends_content_header) {
+                            onBind { }
+                            onClick {
+                                startActivity(Intent(context, FriendsInfoActivity::class.java)
+                                        .putExtra("userData", (friendsList[it.adapterPosition] as Self).user))
+                            }
+                        }
+                        .map<User, FriendsContentBinding>(R.layout.friends_content) {
+                            onBind {
+                            }
+                            onClick {
+                                startActivity(Intent(context, FriendsInfoActivity::class.java)
+                                        .putExtra("userData", friendsList[it.adapterPosition] as User))
+                            }
+                        }
+                        .into(friendsRecyclerView)
+
+            }
+
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
+                println(t!!.message)
+            }
+
+        })
         ViewCompat.setNestedScrollingEnabled(friendsRecyclerView, false)
     }
 }
 
-class Self {
-    var name = "오준석"
-    var position = "Android Developer"
-    var comment = "I want to go home"
-    var imgLink = ""
-}
+data class Self(var user: User)

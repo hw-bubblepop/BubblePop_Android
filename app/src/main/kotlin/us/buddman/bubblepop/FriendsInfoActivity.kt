@@ -1,12 +1,35 @@
 package us.buddman.bubblepop
 
+import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_friends_info.*
+import kotlinx.android.synthetic.main.activity_study_info_view.*
+import us.buddman.bubblepop.models.User
+import android.content.Intent
+import android.net.Uri
+
 
 class FriendsInfoActivity : BaseActivity() {
 
-
+    lateinit var user: User
+    @SuppressLint("MissingPermission")
     override fun setDefault() {
+        user = intent.getSerializableExtra("userData") as User
+
+        nameText.text = user.nickname
+        emailText.text = user.email
+        phoneNumberText.text = user.phone
+        messageText.text = user.messageStr
+        positionText.text = user.jobPosition + " / " + user.organization
+        phoneCallGo.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("tel:" + user.phone))
+            startActivity(intent)
+        }
+        phoneSmsGo.setOnClickListener {
+            val intentsms = Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + user.phone))
+            startActivity(intentsms)
+        }
     }
 
     override fun onCreateViewId(): Int {

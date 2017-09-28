@@ -35,13 +35,13 @@ class StoryChatListFragment : Fragment() {
                     onClick { startActivity(Intent(context, StoryChatActivity::class.java)) }
                 }
                 .into(storyChatRecyclerView)
+        addChat.setOnClickListener {
+
+        }
     }
 
     fun initialize() {
-        chatArray.run {
-            for (i in 1..10)
-                add(Chat("건축학 공부 그룹", "레드스톤 있으신분?", 5))
-        }
+
     }
 }
 
