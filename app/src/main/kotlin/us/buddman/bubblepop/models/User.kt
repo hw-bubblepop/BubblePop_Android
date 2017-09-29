@@ -25,6 +25,8 @@ class User() : Serializable {
             if(message == "") return "한줄 메세지가 없습니다."
             else return message
         }
+    var mainCard : String = ""
+
     var cards : ArrayList<String> = ArrayList()
     constructor(email: String, nickname: String) : this() {
         this.email = email

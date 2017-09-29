@@ -51,7 +51,7 @@ class MainFriendsFragment : Fragment() {
                         .map<Self, FriendsContentHeaderBinding>(R.layout.friends_content_header) {
                             onBind {
                                 it.binding.friendsContentHeaderImage.setImageURI(
-                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as Self).user.cards[0])), context)
+                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as Self).user.mainCard)), context)
                             }
                             onClick {
                                 startActivity(Intent(context, FriendsInfoActivity::class.java)
@@ -61,7 +61,7 @@ class MainFriendsFragment : Fragment() {
                         .map<User, FriendsContentBinding>(R.layout.friends_content) {
                             onBind {
                                 it.binding.friendsContentHeaderImage.setImageURI(
-                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as User).cards[0])), context)
+                                        Uri.parse(TextUtils.getServerString((friendsList[it.adapterPosition] as User).mainCard)), context)
                             }
                             onClick {
                                 startActivity(Intent(context, FriendsInfoActivity::class.java)

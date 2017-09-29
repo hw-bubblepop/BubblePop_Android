@@ -1,6 +1,7 @@
 package us.buddman.bubblepop.utils
 
 import android.support.annotation.Nullable
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import us.buddman.bubblepop.models.User
 import retrofit2.Call
@@ -74,5 +75,11 @@ interface NetworkAPI {
     fun findMyFriend(
             @Field("id") _id: String): Call<ArrayList<User>>
 
+    @POST("/user/add/card")
+    @Multipart
+    fun updateMyCard(
+            @Part("id") id: RequestBody,
+            @Part("card\"; filename=\"card.jpg\" ") card: RequestBody
+    ): Call<User>
 
 }

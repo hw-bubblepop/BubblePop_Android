@@ -1,8 +1,10 @@
 package us.buddman.bubblepop.fragment
 
+import android.net.Uri
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.text.InputType
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +31,7 @@ class MainBubbleCardFragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        cardView.setImageURI(Uri.parse(us.buddman.bubblepop.utils.TextUtils.getServerString(CredentialsManager.instance.activeUser.second.mainCard)), context)
         findByPhone.setOnClickListener {
             MaterialDialog.Builder(activity)
                     .title("전화번호로 추가하기")
@@ -119,5 +122,8 @@ class MainBubbleCardFragment : Fragment() {
                     .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
                     .show()
         }
+    }
+    fun onPageResume(){
+        cardView.setImageURI(Uri.parse(us.buddman.bubblepop.utils.TextUtils.getServerString(CredentialsManager.instance.activeUser.second.mainCard)), context)
     }
 }

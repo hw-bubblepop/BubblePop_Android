@@ -34,7 +34,7 @@ class FriendsInfoActivity : BaseActivity() {
             startActivity(intentsms)
         }
         profileImage.setImageURI(Uri.parse(TextUtils.getServerString(user.thumbnail)), applicationContext)
-        cardImage.setImageURI(Uri.parse(TextUtils.getServerString(user.cards[0])), applicationContext)
+        cardImage.setImageURI(Uri.parse(TextUtils.getServerString(user.mainCard)), applicationContext)
         if (user._id == CredentialsManager.instance.activeUser.second._id) chatGo.visibility = View.GONE
         chatGo.setOnClickListener {
             // TODO Go to Chat
