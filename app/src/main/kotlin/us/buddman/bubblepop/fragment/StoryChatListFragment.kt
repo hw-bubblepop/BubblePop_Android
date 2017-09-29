@@ -7,12 +7,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.nitrico.fontbinder.BR
 import com.github.nitrico.lastadapter.LastAdapter
 import kotlinx.android.synthetic.main.fragment_story_chatlist.*
+import us.buddman.bubblepop.BR
 import us.buddman.bubblepop.R
 import us.buddman.bubblepop.StoryChatActivity
 import us.buddman.bubblepop.databinding.ChatContentBinding
+import us.buddman.bubblepop.utils.ChatUtil
 
 /**
  * Created by Junseok on 2017-09-21.
@@ -36,7 +37,7 @@ class StoryChatListFragment : Fragment() {
                 }
                 .into(storyChatRecyclerView)
         addChat.setOnClickListener {
-
+            ChatUtil.instance.send("click private chat add ")
         }
     }
 

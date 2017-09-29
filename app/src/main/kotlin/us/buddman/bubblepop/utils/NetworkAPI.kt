@@ -5,6 +5,7 @@ import okhttp3.ResponseBody
 import us.buddman.bubblepop.models.User
 import retrofit2.Call
 import retrofit2.http.*
+import us.buddman.bubblepop.models.ChatRoom
 
 /**
  * Created by Junseok Oh on 2017-08-02.
@@ -74,5 +75,11 @@ interface NetworkAPI {
     fun findMyFriend(
             @Field("id") _id: String): Call<ArrayList<User>>
 
+    @POST("/chat/create")
+    @FormUrlEncoded
+    fun createChat(@Field("chattype") chattype: String, @Field("title") title: String): Call<ChatRoom>
 
+    @POST("/chat/adduser")
+    @FormUrlEncoded
+    fun addUserToChat(@Field("chat_room_id") room_id: String, @Field("user_id") user_id: String): Call<ChatRoom>
 }

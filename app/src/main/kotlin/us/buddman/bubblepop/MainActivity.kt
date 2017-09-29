@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main_story.*
 import us.buddman.bubblepop.fragment.*
+import us.buddman.bubblepop.utils.ChatUtil
+import us.buddman.bubblepop.utils.CredentialsManager
 
 class MainActivity : BaseActivity() {
 
@@ -27,6 +29,7 @@ class MainActivity : BaseActivity() {
         mainPager.currentItem = 2
         mainBottomBar.setDefaultTab(R.id.main_bubblecard)
 
+        ChatUtil.instance
     }
     open fun updateFriendList(){
         (pagerAdapter.instantiateItem(mainPager, 1) as MainFriendsFragment).onPageResume()
