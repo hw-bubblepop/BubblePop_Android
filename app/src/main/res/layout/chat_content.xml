@@ -4,7 +4,7 @@
 
         <variable
             name="content"
-            type="us.buddman.bubblepop.fragment.Chat" />
+            type="us.buddman.bubblepop.models.ChatRoom" />
 
     </data>
 
@@ -46,7 +46,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{content.title}"
+                    android:text="@{content.memberString}"
                     android:textColor="@color/textColorBlackNormal"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="06:00"
+                    android:text="@{content.lastChatTime}"
                     android:textColor="@color/textColorGray"
                     android:textSize="12sp" />
 
@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@{content.content}"
+                android:text="@{content.lastChat}"
                 android:textColor="@color/textColorGray" />
 
         </LinearLayout>
@@ -80,9 +80,9 @@
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/round_pink_square"
                 android:gravity="center"
-                android:text="@{content.newMessageStr}"
                 android:textColor="#FFF"
                 android:textStyle="bold"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="h,1:1"
                 app:layout_constraintEnd_toEndOf="parent"

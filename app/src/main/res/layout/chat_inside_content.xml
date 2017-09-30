@@ -43,7 +43,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{content.user.nickname}"
+                    android:text="@{content.user}"
                     android:textColor="@color/textColorBlackNormal"
                     android:textSize="15sp"
                     android:textStyle="bold" />

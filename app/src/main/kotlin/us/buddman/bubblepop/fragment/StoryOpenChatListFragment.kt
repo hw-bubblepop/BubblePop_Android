@@ -12,6 +12,7 @@ import com.github.nitrico.lastadapter.LastAdapter
 import kotlinx.android.synthetic.main.fragment_story_openchatlist.*
 import us.buddman.bubblepop.R
 import us.buddman.bubblepop.databinding.ChatContentBinding
+import us.buddman.bubblepop.utils.ChatUtil
 
 /**
  * Created by Junseok on 2017-09-21.
@@ -35,7 +36,7 @@ class StoryOpenChatListFragment : Fragment() {
                 }
                 .into(storyOpenChatRecyclerView)
         addChat.setOnClickListener {
-
+            ChatUtil.instance.send("click public chat add ")
         }
     }
 
